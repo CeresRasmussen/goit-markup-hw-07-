@@ -1,0 +1,118 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  z-index: 2;
+  background-color: $main-background-color;
+  border-bottom: 1px solid $header-border-color;
+
+  .container {
+    display: flex;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__link {
+    @include flexCenter;
+    position: relative;
+    gap: 10px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: $title-text-color;
+
+    transition: color 250ms $main-animation-cubic;
+
+    &:hover,
+    &:focus {
+      color: $accent-text-color;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      bottom: -1px;
+      left: 0%;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-text-color;
+
+      transform: scale(0);
+      transition: transform 250ms $main-animation-cubic;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      transform: scale(1);
+    }
+
+    &--current {
+      position: relative;
+      color: $accent-text-color;
+    }
+
+    &--current::after {
+      position: absolute;
+      content: '';
+      bottom: -1px;
+      left: 0%;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: $accent-text-color;
+    }
+  }
+}
+
+.header__logo {
+  @extend %logo;
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.logo__web {
+  color: $accent-text-color;
+}
+
+.contacts {
+  display: flex;
+  margin-left: auto;
+  gap: 30px;
+
+  &__link {
+    @include flexCenter;
+    position: relative;
+    gap: 10px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: $description-text-color;
+
+    transition: color 250ms $main-animation-cubic;
+
+    &:hover,
+    &:focus {
+      color: $accent-text-color;
+    }
+  }
+
+  &__icon {
+    fill: currentColor;
+  }
+}

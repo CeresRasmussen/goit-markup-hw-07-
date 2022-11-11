@@ -1,0 +1,31 @@
+.clients {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    &__list {
+            @include flexCenter;
+            gap: 30px;
+        }
+    
+        &__title {
+            @extend %sectionTitle;
+
+        }
+    
+        &__item {
+            @include flexCenter;
+            width: 170px;
+            border: 1px solid $social-icon-color;
+            border-radius: 4px;
+            fill: $social-icon-color;
+    
+            transition: fill 250ms $main-animation-cubic, border 250ms $main-animation-cubic;
+        }
+    
+        &__item:hover,
+        &__item:focus {
+            fill: $accent-text-color;
+            border-color: $accent-text-color;
+        }
+}
+

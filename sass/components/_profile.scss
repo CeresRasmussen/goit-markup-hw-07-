@@ -1,0 +1,104 @@
+.profile {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.filter {
+  @include flexCenter;
+  margin-bottom: 50px;
+  gap: 8px;
+
+  &__button {
+    display: block;
+    padding: 6px 21px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.625;
+    letter-spacing: 0.03em;
+    background-color: $filter-background-color;
+    font-family: inherit;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: $main-animation-cubic;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $accent-text-color;
+    color: $main-background-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card {
+  display: flex;
+  background-color: $main-background-color;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__item-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 294px;
+    transform: translateY(100%);
+    padding: 63px 24px;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    opacity: 0.9;
+    color: $main-background-color;
+    background-color: $accent-text-color;
+
+    transition: transform 250ms $main-animation-cubic;
+  }
+
+  &__link {
+    display: block;
+
+    transition: box-shadow 250ms $main-animation-cubic;
+  }
+
+  &__link:hover,
+  &__link:focus,
+  &__link:hover &__item-description,
+  &__link:focus &__item-description {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+    transform: translateY(0);
+  }
+
+  &__info {
+    padding: 20px 24px;
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: $title-text-color;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.03em;
+    color: $description-text-color;
+  }
+}

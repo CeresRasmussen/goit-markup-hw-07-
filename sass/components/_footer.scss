@@ -1,0 +1,131 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: $second-background-color;
+
+  &__container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    @extend %logo;
+    margin-bottom: 20px;
+    color: $main-background-color;
+  }
+
+  &__item {
+    display: block;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 9px;
+  }
+
+  &__link {
+    color: $footer-address-link;
+    font-style: normal;
+
+    transition: color 250ms $main-animation-cubic;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $accent-text-color;
+  }
+}
+
+.location {
+  color: $main-background-color;
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+
+.footer-social {
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: $main-background-color;
+  }
+
+  &__list {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__item {
+    @extend %social;
+    background-color: $footer-item-background;
+    fill: $main-background-color;
+
+    transition: background-color 250ms $main-animation-cubic;
+  }
+
+  &__item:hover,
+  &__item:focus {
+    background-color: $accent-text-color;
+  }
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $main-background-color;
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__input {
+    @include flexCenter;
+    width: 358px;
+    height: 50px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: $footer-address-link;
+    background-color: $second-background-color;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    outline: none;
+
+    transition: border 250ms $main-animation-cubic;
+  }
+
+  &__input:hover,
+  &__input:focus {
+    border-color: $accent-text-color;
+    fill: $accent-text-color;
+  }
+
+  &__button {
+    @extend %button;
+    display: flex;
+    padding: 10px 28px;
+    gap: 10px;
+    align-items: center;
+    fill: $main-background-color;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $button-accent-color;
+  }
+}

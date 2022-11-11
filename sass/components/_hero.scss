@@ -1,0 +1,36 @@
+.hero {
+    @include flexCenter;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 200px 0;
+  background-color: $hero-background-color;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &__title {
+    width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $main-background-color;
+    text-align: center;
+  }
+
+  &__button {
+    @extend %button;
+    margin: auto auto;
+    padding: 10px 32px;
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: $button-accent-color;
+  }
+}

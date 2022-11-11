@@ -1,0 +1,19 @@
+// @mixin textStyle(
+//   $fontWeight: 400,
+//   $font-size: 16px,
+//   $ine-height: 1.75,
+//   $letter-spacing: 0.06em,
+//   $color: $description-text-color
+// ) {
+//   font-weight: $fontWeight;
+//   font-size: $font-size;
+//   line-height: $ine-height;
+//   letter-spacing: $letter-spacing;
+//   color: $color;
+// }
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
