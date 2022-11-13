@@ -1,14 +1,24 @@
 .features {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 
   &__title {
+    text-align: center;
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: $title-text-color;
+
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
   }
 
   &__text {
@@ -19,11 +29,25 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     gap: 30px;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
   }
 
   &__item {
-    max-width: 270px;
+    max-width: 450px;
+
+    @media screen and (min-width: 768px) {
+      max-width: 354px;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      max-width: 270px;
+    }
   }
 
   &__icon {
