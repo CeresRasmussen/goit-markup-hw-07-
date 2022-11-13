@@ -1,32 +1,68 @@
 .hero {
-  @include flexCenter;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 200px 0;
+  max-width: 768px;
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
+  padding: 118px 0;
+  background-size: cover;
   background-color: $hero-background-color;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(../images/hero-bg.jpg);
+    url(/images/hero-bg-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/hero-bg-mobile-2x.jpg);
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 1200px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/hero-bg-tablet.jpg);
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 200px 0;
+    max-width: 1600px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url(/images/hero-bg-desktop.jpg);
+  }
+  .container {
+    @include flexCenter;
+    flex-direction: column;
+  }
 
   &__title {
-    width: 696px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.61;
+    // font-size: 44px;
+    // line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $main-background-color;
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      width: 696px;
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 
   &__button {
     @include buttonStyle;
     margin: auto auto;
-    padding: 10px 32px;
+    padding: 10px 24px;
+
+    @media screen and (min-width: 1200px) {
+      padding: 10px 32px;
+    }
   }
 
   &__button:hover,
