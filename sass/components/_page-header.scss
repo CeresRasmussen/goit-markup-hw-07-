@@ -1,19 +1,33 @@
 .header {
   position: fixed;
+  height: 80px;
   width: 100%;
   top: 0%;
-  z-index: 2;
+  z-index: 1;
   background-color: $main-background-color;
   border-bottom: 1px solid $header-border-color;
 
-  .container {
+  &__container {
+    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      justify-content: center;
+    }
+    @media screen and (min-width: 1200px) {
+      justify-content: center;
+    }
   }
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 
   &__list {
     display: flex;
@@ -77,10 +91,19 @@
 }
 
 .header__logo {
-  @extend %logo;
-  margin-right: 93px;
+  @include logoStyle;
   padding-top: 24px;
   padding-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
+    font-size: 26px;
+    line-height: 1.19;
+  }
 }
 
 .logo__web {
@@ -88,23 +111,47 @@
 }
 
 .contacts {
-  display: flex;
-  margin-left: auto;
-  gap: 30px;
+  display: none;
+  margin-left: 96px;
+  padding: 21px 0;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    // padding: 21px 0;
+    gap: 10px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    @include flexCenter;
+    margin-left: auto;
+    gap: 30px;
+  }
+
+  &__item {
+    align-items: baseline;
+  }
 
   &__link {
-    @include flexCenter;
+    display: flex;
     position: relative;
     gap: 10px;
-    padding-top: 32px;
-    padding-bottom: 32px;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
+    font-size: 12px;
+    line-height: 1.17;
     letter-spacing: 0.02em;
     color: $description-text-color;
 
     transition: color 250ms $main-animation-cubic;
+
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+      line-height: 1.14;
+    }
 
     &:hover,
     &:focus {

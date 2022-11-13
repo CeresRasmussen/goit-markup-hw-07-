@@ -17,3 +17,65 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin logoStyle {
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.03em;
+  color: $title-text-color;
+  text-decoration: none;
+}
+
+@mixin sectionTitle {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: $title-text-color;
+}
+
+@mixin socialStyle {
+  @include flexCenter;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+}
+
+@mixin buttonStyle {
+  display: block;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  background-color: $accent-text-color;
+  color: $main-background-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color 250ms $main-animation-cubic;
+}
+
+@mixin phoneSize {
+  @media screen and (max-width: 767px){
+    @content;
+  }
+}
+
+@mixin tabletSize {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin phoneSize {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

@@ -3,7 +3,7 @@
   padding-bottom: 94px;
 
   &__title {
-    @extend %sectionTitle;
+    @include sectionTitle;
   }
 
   &__list {

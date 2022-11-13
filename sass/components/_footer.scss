@@ -10,7 +10,7 @@
   }
 
   &__logo {
-    @extend %logo;
+    @include logoStyle;
     margin-bottom: 20px;
     color: $main-background-color;
   }
@@ -59,7 +59,7 @@
   }
 
   &__item {
-    @extend %social;
+    @include socialStyle;
     background-color: $footer-item-background;
     fill: $main-background-color;
 
@@ -116,7 +116,7 @@
   }
 
   &__button {
-    @extend %button;
+    @include buttonStyle;
     display: flex;
     padding: 10px 28px;
     gap: 10px;

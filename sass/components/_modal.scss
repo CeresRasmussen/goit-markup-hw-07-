@@ -209,7 +209,7 @@ body.modal-open {
   }
 
   &__send-button {
-    @extend %button;
+    @include buttonStyle;
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;

@@ -1,5 +1,5 @@
 .hero {
-    @include flexCenter;
+  @include flexCenter;
   max-width: 1600px;
   margin: 0 auto;
   padding: 200px 0;
@@ -24,7 +24,7 @@
   }
 
   &__button {
-    @extend %button;
+    @include buttonStyle;
     margin: auto auto;
     padding: 10px 32px;
   }
