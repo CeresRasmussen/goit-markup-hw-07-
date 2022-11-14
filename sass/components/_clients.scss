@@ -8,6 +8,7 @@
 
   &__list {
     @include flexCenter;
+    width: 100%;
     flex-wrap: wrap;
     gap: 30px;
   }
@@ -17,27 +18,35 @@
   }
 
   &__item {
-    @include flexCenter;
-    height: 92px;
-    width: 210px;
-    border: 1px solid $social-icon-color;
-    border-radius: 4px;
-    fill: $social-icon-color;
-
-    transition: fill 250ms $main-animation-cubic, border 250ms $main-animation-cubic;
+    width: 100%;
+    max-width: 210px;
 
     @media screen and (min-width: 768px) and (max-width: 1199px) {
-      width: 226px;
+      max-width: 226px;
     }
 
     @media screen and (min-width: 1200px) {
-      width: 170px;
+      max-width: 170px;
     }
   }
 
-  &__item:hover,
-  &__item:focus {
-    fill: $accent-text-color;
+  &__link {
+    @include flexCenter;
+    height: 92px;
+    border: 1px solid $social-icon-color;
+    border-radius: 4px;
+    color: $social-icon-color;
+
+    transition: color 250ms $main-animation-cubic, border 250ms $main-animation-cubic;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    color: $accent-text-color;
     border-color: $accent-text-color;
+  }
+
+  &__icon {
+    fill: currentColor;
   }
 }

@@ -1,16 +1,23 @@
 .profile {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .filter {
   @include flexCenter;
+  flex-wrap: wrap;
   margin-bottom: 50px;
   gap: 8px;
+  
 
   &__button {
     display: block;
-    padding: 6px 21px;
+    padding: 6px 22px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.625;
@@ -38,8 +45,13 @@
 .card {
   display: flex;
   background-color: $main-background-color;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  @media screen and (min-width: 767px) {
+      flex-direction: row;
+    }
 
   &__image {
     position: relative;

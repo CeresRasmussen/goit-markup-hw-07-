@@ -23,38 +23,92 @@
 
     <header class="header">
       <div class="container">
-        <nav class="navigation">
+        <div class="header__container">
           <a href="./index.html" class="header__logo" lang="en"
             ><span class="logo__web">Web</span>Studio</a
           >
-          <ul class="navigation__list">
-            <li class="navigation__item">
-              <a href="./index.html" class="navigation__link">Студія</a>
+          <button
+            type="button"
+            class="burger"
+            aria-label="Перемикач мобільного меню"
+            aria-expanded="false"
+            data-menu-button
+          >
+            <svg class="burger__icon" width="40" height="40">
+              <use class="burger__open" href="./images/icons.svg#icon-burger-menu"></use>
+              <use class="burger__closed" href="./images/icons.svg#icon-burger-close"></use>
+            </svg>
+          </button>
+
+          <div class="mobile-menu" data-menu>
+            <nav>
+              <ul class="mobile-menu__nav-list">
+                <li class="mobile-menu__nav-item">
+                  <a href="./index.html" class="mobile-menu__link">Студія</a>
+                </li>
+                <li class="mobile-menu__nav-item">
+                  <a href="./portfolio.html" class="mobile-menu__link mobile-menu__link--current"
+                    >Портфоліо</a
+                  >
+                </li>
+                <li class="mobile-menu__nav-item">
+                  <a href="#" class="mobile-menu__link">Контакти</a>
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <ul class="mobile-menu__contacts">
+                <li class="mobile-menu__tel">
+                  <a href="tel:+380961111111" class="mobile-menu__tel-link"> +38 096 111 11 11</a>
+                </li>
+                <li class="mobile-menu__mail">
+                  <a href="mailto:info@devstudio.com" class="mobile-menu__mail-link">
+                    info@devstudio.com</a
+                  >
+                </li>
+              </ul>
+              <div class="mobile-menu__socials">
+                <a href="#" class="mobile-menu__socials-link">Instagram</a>
+                <span class="mobile-menu__socials-line">|</span>
+                <a href="#" class="mobile-menu__socials-link">Twitter</a>
+                <span class="mobile-menu__socials-line">|</span>
+                <a href="#" class="mobile-menu__socials-link">Facebook</a>
+                <span class="mobile-menu__socials-line">|</span>
+                <a href="#" class="mobile-menu__socials-link">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <nav class="navigation">
+            <ul class="navigation__list">
+              <li class="navigation__item">
+                <a href="./index.html" class="navigation__link navigation__link--current">Студія</a>
+              </li>
+              <li class="navigation__item">
+                <a href="./portfolio.html" class="navigation__link">Портфоліо</a>
+              </li>
+              <li class="navigation__item"><a href="#" class="navigation__link">Контакти</a></li>
+            </ul>
+          </nav>
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a href="mailto:info@devstudio.com" class="contacts__link">
+                <svg class="contacts__icon" width="16" height="12">
+                  <use href="./images/icons.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com</a
+              >
             </li>
-            <li class="navigation__item">
-              <a href="./portfolio.html" class="navigation__link navigation__link--current">Портфоліо</a>
+            <li class="contacts__item">
+              <a href="tel:+380961111111" class="contacts__link"
+                ><svg class="contacts__icon" width="10" height="16">
+                  <use href="./images/icons.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a
+              >
             </li>
-            <li class="navigation__item"><a href="#" class="navigation__link">Контакти</a></li>
           </ul>
-        </nav>
-        <ul class="contacts">
-          <li class="contacts__item">
-            <a href="mailto:info@devstudio.com" class="contacts__link">
-              <svg class="contacts__icon" width="16" height="12">
-                <use href="./images/icons.svg#icon-envelope"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="contacts__item">
-            <a href="tel:+380961111111" class="contacts__link"
-              ><svg class="contacts__icon" width="10" height="16">
-                <use href="./images/icons.svg#icon-smartphone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
 
@@ -83,12 +137,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/notebook-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="На екрані ноутбука зображено веб-сторінку із трьома людьми"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/notebook-img-mobile.jpg    1x,
+                        ./images/notebook-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/notebook-img-tablet.jpg    1x,
+                        ./images/notebook-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/notebook-img-desktop.jpg    1x,
+                        ./images/notebook-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/notebook-img-desktop.jpg"
+                      alt="На екрані ноутбука зображено веб-сторінку із трьома людьми"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -104,12 +179,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/poster-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки'"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/poster-img-mobile.jpg    1x,
+                        ./images/poster-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/poster-img-tablet.jpg    1x,
+                        ./images/poster-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/poster-img-desktop.jpg    1x,
+                        ./images/poster-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/poster-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -125,12 +221,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/restoran-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Додаток ресторана морських продуктів"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/restaurant-img-mobile.jpg    1x,
+                        ./images/restaurant-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/restaurant-img-tablet.jpg    1x,
+                        ./images/restaurant-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/restaurant-img-desktop.jpg    1x,
+                        ./images/restaurant-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/restaurant-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -146,12 +263,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/headphones-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Зображення навушників"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/headphones-img-mobile.jpg    1x,
+                        ./images/headphones-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/headphones-img-tablet.jpg    1x,
+                        ./images/headphones-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/headphones-img-desktop.jpg    1x,
+                        ./images/headphones-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/headphones-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -167,12 +305,27 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/boxes-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Зображення двох коробок різного розміру"
-                  />
+                  <picture>
+                    <source
+                      srcset="./images/boxes-img-mobile.jpg 1x, ./images/boxes-img-mobile@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="./images/boxes-img-tablet.jpg 1x, ./images/boxes-img-tablet@2x.jpg 2x"
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/boxes-img-desktop.jpg    1x,
+                        ./images/boxes-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/poster-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -188,12 +341,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/desktop-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Зображення монітора"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/desktop-img-mobile.jpg    1x,
+                        ./images/desktop-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop-img-tablet.jpg    1x,
+                        ./images/desktop-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/desktop-img-desktop.jpg    1x,
+                        ./images/desktop-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/desktop-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -209,12 +383,24 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/book-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Книга із зображеннями"
-                  />
+                  <picture>
+                    <source
+                      srcset="./images/book-img-mobile.jpg 1x, ./images/book-img-mobile@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="./images/book-img-tablet.jpg 1x, ./images/book-img-tablet@2x.jpg 2x"
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="./images/book-img-desktop.jpg 1x, ./images/book-img-desktop@2x.jpg 2x"
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/book-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -230,12 +416,27 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/label-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Зображення етикетки"
-                  />
+                  <picture>
+                    <source
+                      srcset="./images/label-img-mobile.jpg 1x, ./images/label-img-mobile@2x.jpg 2x"
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="./images/label-img-tablet.jpg 1x, ./images/label-img-tablet@2x.jpg 2x"
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/label-img-desktop.jpg    1x,
+                        ./images/label-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/poster-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -251,12 +452,33 @@
             <li class="card__item">
               <a href="#" class="card__link">
                 <div class="card__image">
-                  <img
-                    src="./images/notepad-img.jpg"
-                    width="370"
-                    height="294"
-                    alt="Зображення додатка із бізнес сфери"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/notepad-img-mobile.jpg    1x,
+                        ./images/notepad-img-mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/notepad-img-tablet.jpg    1x,
+                        ./images/notepad-img-tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px) and (max-width: 1199px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/notepad-img-desktop.jpg    1x,
+                        ./images/notepad-img-desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <img
+                      src="./images/poster-img-desktop.jpg"
+                      alt="Дизайн баскетбольного постера 'Новий Орлеан проти Золотої Зірки"
+                    />
+                  </picture>
                   <p class="card__item-description">
                     Ресурс пропонує комплексні пропозиції з різним рівнем функціоналу та сервісів.
                     Все це дозволить відвідувачу отримати вичерпні відомості про компанію чи
@@ -276,7 +498,7 @@
 
     <!-- Footer -->
 
-     <footer class="footer">
+    <footer class="footer">
       <div class="container footer__container">
         <div class="footer__address">
           <a href="./index.html" class="footer__logo" lang="en"
@@ -351,5 +573,9 @@
         </form>
       </div>
     </footer>
+
+    <!-- Js-script -->
+
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>
