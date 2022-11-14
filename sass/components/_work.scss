@@ -1,6 +1,11 @@
 .work {
+  display: none;
   padding-top: 0;
   padding-bottom: 94px;
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+  }
 
   &__title {
     @include sectionTitle;

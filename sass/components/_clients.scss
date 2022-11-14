@@ -1,31 +1,43 @@
 .clients {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1200px) {
     padding-top: 94px;
     padding-bottom: 94px;
+  }
 
-    &__list {
-            @include flexCenter;
-            gap: 30px;
-        }
-    
-        &__title {
-            @include sectionTitle;
+  &__list {
+    @include flexCenter;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 
-        }
-    
-        &__item {
-            @include flexCenter;
-            width: 170px;
-            border: 1px solid $social-icon-color;
-            border-radius: 4px;
-            fill: $social-icon-color;
-    
-            transition: fill 250ms $main-animation-cubic, border 250ms $main-animation-cubic;
-        }
-    
-        &__item:hover,
-        &__item:focus {
-            fill: $accent-text-color;
-            border-color: $accent-text-color;
-        }
+  &__title {
+    @include sectionTitle;
+  }
+
+  &__item {
+    @include flexCenter;
+    height: 92px;
+    width: 210px;
+    border: 1px solid $social-icon-color;
+    border-radius: 4px;
+    fill: $social-icon-color;
+
+    transition: fill 250ms $main-animation-cubic, border 250ms $main-animation-cubic;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      width: 226px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 170px;
+    }
+  }
+
+  &__item:hover,
+  &__item:focus {
+    fill: $accent-text-color;
+    border-color: $accent-text-color;
+  }
 }
-
