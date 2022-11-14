@@ -13,7 +13,6 @@
   flex-wrap: wrap;
   margin-bottom: 50px;
   gap: 8px;
-  
 
   &__button {
     display: block;
@@ -50,8 +49,21 @@
   flex-wrap: wrap;
   gap: 30px;
   @media screen and (min-width: 767px) {
-      flex-direction: row;
+    flex-direction: row;
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 450px;
+
+    @media screen and (min-width: 481px) and (max-width: 1199px) {
+      max-width: 354px;
     }
+
+    @media screen and (min-width: 1200px) {
+      max-width: 370px;
+    }
+  }
 
   &__image {
     position: relative;
@@ -101,16 +113,26 @@
   &__title {
     margin-bottom: 4px;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 2;
+    font-size: 16px;
+    line-height: 1.8;
     letter-spacing: 0.06em;
     color: $title-text-color;
+
+    @media screen and (min-width: 1200px) {
+      font-size: 18px;
+      line-height: 2;
+    }
   }
 
   &__text {
-    font-size: 16px;
-    line-height: 1.875;
+    font-size: 14px;
+    line-height: 1.66;
     letter-spacing: 0.03em;
     color: $description-text-color;
+
+    @media screen and (min-width: 1200px) {
+        font-size: 16px;
+        line-height: 1.875;
+      }
   }
 }
