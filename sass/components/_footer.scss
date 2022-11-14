@@ -3,10 +3,30 @@
   padding-bottom: 60px;
   background-color: $second-background-color;
 
-  &__container {
+  .container {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+  }
+  &__address {
+    text-align: center;
+    margin-bottom: 60px;
+    @media screen and (min-width: 1200px) {
+      text-align: start;
+      margin-bottom: 0;
+    }
   }
 
   &__logo {
@@ -43,6 +63,12 @@
 }
 
 .footer-social {
+  margin-bottom: 60px;
+  @media screen and (min-width: 1200px) {
+      text-align: start;
+      margin-bottom: 0;
+    }
+
   &__text {
     margin-bottom: 20px;
     font-weight: 700;
@@ -51,6 +77,11 @@
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: $main-background-color;
+    text-align: center;
+
+    @media screen and (min-width: 1200px) {
+      text-align: left;
+    }
   }
 
   &__list {
@@ -74,8 +105,16 @@
 
 .subscribe {
   display: flex;
+  // width: 100%;
   flex-direction: column;
   gap: 20px;
+  text-align: center;
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1200px) {
+    text-align: left;
+  }
 
   &__label {
     font-weight: 700;
@@ -89,12 +128,20 @@
 
   &__item {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
   }
 
   &__input {
     @include flexCenter;
-    width: 358px;
+    // width: 358px;
+    width: 100%;
+    max-width: 450px;
     height: 50px;
     padding: 15px;
     font-size: 16px;
@@ -107,6 +154,9 @@
     outline: none;
 
     transition: border 250ms $main-animation-cubic;
+    @media screen and (min-width: 1200px) {
+      width: 368px;
+    }
   }
 
   &__input:hover,
@@ -118,6 +168,8 @@
   &__button {
     @include buttonStyle;
     display: flex;
+    width: 200px;
+    margin: 0 auto;
     padding: 10px 28px;
     gap: 10px;
     align-items: center;

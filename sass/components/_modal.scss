@@ -26,8 +26,9 @@ body.modal-open {
 
 .modal {
   position: absolute;
-  min-width: 528px;
-  min-height: 581px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 609px;
   left: 50%;
   top: 50%;
   padding: 40px;
@@ -39,6 +40,9 @@ body.modal-open {
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $main-animation-cubic;
+  @media screen and (min-width: 1200px) {
+      max-width: 526px;
+    }
 
   &__close-button {
     @include flexCenter;
