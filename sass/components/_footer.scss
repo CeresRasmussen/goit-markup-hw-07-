@@ -35,10 +35,6 @@
     color: $main-background-color;
   }
 
-  &__item {
-    display: block;
-  }
-
   &__item:not(:last-child) {
     margin-bottom: 9px;
   }
@@ -46,6 +42,8 @@
   &__link {
     color: $footer-address-link;
     font-style: normal;
+    font-size: 14px;
+    line-height: 1.71;
 
     transition: color 250ms $main-animation-cubic;
   }
@@ -60,14 +58,16 @@
   color: $main-background-color;
   font-style: normal;
   letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.71;
 }
 
 .footer-social {
   margin-bottom: 60px;
   @media screen and (min-width: 1200px) {
-      text-align: start;
-      margin-bottom: 0;
-    }
+    text-align: start;
+    margin-bottom: 0;
+  }
 
   &__text {
     margin-bottom: 20px;

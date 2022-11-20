@@ -113,15 +113,16 @@ ul {
 
 .mobile-menu {
   position: absolute;
-  display: none;
+  display: flex;
+  opacity: 0;
   flex-direction: column;
   justify-content: space-between;
   width: 100vw;
   height: 100vh;
   top: 0%;
   left: 0%;
+  transform: translateX(-100%);
   z-index: 1;
-  margin-left: -15px;
   padding: 48px 40px;
   font-weight: 500;
   font-size: 40px;
@@ -129,6 +130,7 @@ ul {
   letter-spacing: 0.02em;
   background-color: #ffffff;
   border-bottom: 1px solid #ececec;
+  transition: transform 250ms linear, opacity 250ms linear;
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -136,7 +138,8 @@ ul {
   }
 }
 .mobile-menu.is-open {
-  display: flex;
+  transform: translateX(0%);
+  opacity: 1;
 }
 .mobile-menu__nav-item:not(:last-child) {
   margin-bottom: 32px;
@@ -162,15 +165,21 @@ ul {
 }
 .mobile-menu__tel-link {
   font-weight: 500;
-  font-size: 34px;
-  line-height: 1.175;
+  font-size: 22px;
+  line-height: 1.67;
   letter-spacing: 0.02em;
   color: #2196f3;
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu__tel-link {
+    font-size: 34px;
+    line-height: 1.175;
+  }
 }
 .mobile-menu__mail-link {
   font-weight: 500;
   font-size: 24px;
-  line-height: 28px;
+  line-height: 1.17;
   letter-spacing: 0.02em;
   color: #757575;
 }
@@ -181,16 +190,26 @@ ul {
 }
 .mobile-menu__socials-link {
   font-weight: 500;
-  font-size: 18px;
-  line-height: 1.22;
+  font-size: 10px;
+  line-height: 1.6;
   letter-spacing: 0.02em;
   color: #2196f3;
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu__socials-link {
+    font-size: 18px;
+    line-height: 1.22;
+  }
 }
 .mobile-menu__socials-line {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   color: rgba(33, 33, 33, 0.2);
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 .header {
@@ -206,15 +225,15 @@ ul {
   .header {
     height: 80px;
   }
+  .header .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
-.header__container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-@media screen and (min-width: 768px) {
-  .header__container {
+@media screen and (min-width: 768px) and (min-width: 768px) {
+  .header .container {
     justify-content: center;
   }
 }
@@ -265,7 +284,6 @@ ul {
   transform: scale(1);
 }
 .navigation__link--current {
-  position: relative;
   color: #2196f3;
 }
 .navigation__link--current::after {
@@ -699,17 +717,17 @@ ul {
   }
 }
 .clients__item {
-  width: 100%;
-  max-width: 210px;
+  width: calc((100% - 30px) / 2);
+  min-width: 120px;
 }
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) {
   .clients__item {
-    max-width: 226px;
+    width: calc((100% - 60px) / 3);
   }
 }
 @media screen and (min-width: 1200px) {
   .clients__item {
-    max-width: 170px;
+    width: calc((100% - 150px) / 6);
   }
 }
 .clients__link {
@@ -777,15 +795,14 @@ ul {
   margin-bottom: 20px;
   color: #ffffff;
 }
-.footer__item {
-  display: block;
-}
 .footer__item:not(:last-child) {
   margin-bottom: 9px;
 }
 .footer__link {
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer__link:hover, .footer__link:focus {
@@ -796,6 +813,8 @@ ul {
   color: #ffffff;
   font-style: normal;
   letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.71;
 }
 
 .footer-social {
@@ -938,6 +957,8 @@ ul {
   height: 100%;
   background: rgba(1, 1, 1, 0.5);
   z-index: 10;
+  opacity: 1;
+  overflow: scroll;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -948,7 +969,7 @@ ul {
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%) scale(1.2);
 }
 
 body.modal-open {
@@ -959,15 +980,14 @@ body.modal-open {
   position: absolute;
   width: 100%;
   max-width: 450px;
-  max-height: 609px;
   left: 50%;
-  top: 50%;
+  top: 50px;
   padding: 40px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   z-index: 2;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* Form */
 }
@@ -1190,7 +1210,6 @@ body.modal-open {
   display: flex;
   background-color: #ffffff;
   flex-direction: column;
-  align-items: center;
   flex-wrap: wrap;
   gap: 30px;
 }
@@ -1203,7 +1222,7 @@ body.modal-open {
   width: 100%;
   max-width: 450px;
 }
-@media screen and (min-width: 481px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .card__item {
     max-width: 354px;
   }
@@ -1224,7 +1243,7 @@ body.modal-open {
   width: 100%;
   height: 294px;
   transform: translateY(100%);
-  padding: 63px 24px;
+  padding: 77px 24px;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
@@ -1233,8 +1252,20 @@ body.modal-open {
   background-color: #2196f3;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media screen and (min-width: 480px) and (max-width: 1199px) {
+  .card__item-description {
+    padding: 63px 24px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card__item-description {
+    padding: 49px 24px;
+  }
+}
 .card__link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card__link:hover, .card__link:focus, .card__link:hover .card__item-description, .card__link:focus .card__item-description {
@@ -1242,6 +1273,8 @@ body.modal-open {
   transform: translateY(0);
 }
 .card__info {
+  flex-grow: 1;
+  margin-bottom: auto;
   padding: 20px 24px;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
@@ -1250,26 +1283,14 @@ body.modal-open {
 .card__title {
   margin-bottom: 4px;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 2;
   letter-spacing: 0.06em;
   color: #212121;
 }
-@media screen and (min-width: 1200px) {
-  .card__title {
-    font-size: 18px;
-    line-height: 2;
-  }
-}
 .card__text {
-  font-size: 14px;
-  line-height: 1.66;
+  font-size: 16px;
+  line-height: 1.875;
   letter-spacing: 0.03em;
   color: #757575;
-}
-@media screen and (min-width: 1200px) {
-  .card__text {
-    font-size: 16px;
-    line-height: 1.875;
-  }
 }/*# sourceMappingURL=main.css.map */
