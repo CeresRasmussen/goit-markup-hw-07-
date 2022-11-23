@@ -213,6 +213,10 @@ body.menu-open {
   overflow: hidden;
 }
 
+.current-mobile {
+  color: #2196f3;
+}
+
 .header {
   position: fixed;
   height: 60px;
